@@ -1,0 +1,81 @@
+﻿@TiendaWebAPI_HostAddress = http://localhost:5170
+@pk = 2
+@brandName = Logitech
+
+################# DISPOSITIVOS_CONTROLLER #################
+
+GET {{TiendaWebAPI_HostAddress}}/api/Dispositivos
+Accept: text/plain
+
+###✅
+
+GET {{TiendaWebAPI_HostAddress}}/api/Dispositivos/{{pk}}
+Accept: application/json
+
+###✅
+
+GET {{TiendaWebAPI_HostAddress}}/api/Dispositivos/marca/{{brandName}}
+Accept: application/json
+
+###✅
+
+GET {{TiendaWebAPI_HostAddress}}/api/Dispositivos/custom
+Accept: application/json
+
+###✅
+
+POST {{TiendaWebAPI_HostAddress}}/api/Dispositivos
+Accept: */*
+Content-Type: application/json
+
+{
+  "nombre": "string",
+  "precio": 0,
+  "descatalogado": true,
+  "marcaId": 0
+}
+###✅
+
+PUT {{TiendaWebAPI_HostAddress}}/api/Dispositivos/{{pk}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "nombre": "Ordenador",
+  "precio": 1100.00,
+  "descatalogado": false,
+  "marcaId": 2
+}
+###✅
+
+PATCH {{TiendaWebAPI_HostAddress}}/api/Dispositivos/{{pk}}
+Accept: */*
+
+###✅
+
+DELETE {{TiendaWebAPI_HostAddress}}/api/Dispositivos/{{pk}}
+Accept: */*
+
+###✅
+
+################# USERS_CONTROLLER #################
+
+POST {{TiendaWebAPI_HostAddress}}/register
+Accept: */*
+Content-Type: application/json
+
+{
+  "email": "foo@bar.baz",
+  "password": "123456"
+}
+###✅
+
+POST {{TiendaWebAPI_HostAddress}}/login
+Accept: */*
+Content-Type: application/json
+
+{
+  "email": "paco@paco.paco",
+  "password": "SoyPaco"
+}
+###✅
